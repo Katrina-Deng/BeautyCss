@@ -1,0 +1,130 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 元素撑满屏幕宽度 */
+    height: 100vh;
+    /* width: 1000px; */
+    background-color: #393d49;
+}
+.container{
+    width: 1000px;
+    height: 500px;
+}
+.container ul{
+    list-style: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* 子元素剩余空间平均分配 */
+    justify-content: space-around;
+    /* 子元素得交叉轴下面 */
+    align-items: flex-end;
+    /* background-color: white; */
+}
+
+/* small img */
+.container ul li{
+    width: 200px;
+    cursor: pointer;
+}
+
+.container ul li img{
+    width: 100%;
+    /* 图片得半透明边框看起来更好看 */
+    border: 5px solid transparent;
+}
+
+/* end */
+
+/* big img */
+
+.container ul .bigImg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1000px;
+    height: 400px;
+    background-color: white;
+    /* 默认图 */
+    background: url(./img/1.jpg) no-repeat;
+    /* 图片以宽度最大铺满一个盒子 */
+    background-size: contain;
+    border: 5px solid transparent;
+    transition: all .5s;
+}
+
+/* big img end */
+
+/* frame  */
+.container ul .frame{
+    position: absolute;
+    width: 200px;
+    height: 80px;
+    border: 5px solid salmon;
+    left: 0px;
+    bottom: 4px;
+    /* 添加hover 之后会有bug,虽然 移动框没有背景，但是它还是会被鼠标捕抓到，然后会理解为不再hover 就会丢失,然后就会一直闪烁 */
+    /* 将鼠标事件取消 */
+    pointer-events: none;
+    transition: all .5s;
+}
+
+/* 为元素三角 */
+.container ul .frame::before{
+    content: '';
+    position: absolute;
+    top: -20px;
+    /* 三角居中 计算*/
+    left: calc(50% - 15px);
+    width: 30px;
+    height: 15px;
+    background-color: salmon;
+    clip-path: polygon(0 100%,50% 0,100% 100%);
+}
+/* frame end */
+/* 后续相邻选择器 */
+.container ul li:nth-child(1):hover ~.bigImg{
+    background-image: url(./img/1.jpg);
+}
+.container ul li:nth-child(1):hover ~.frame{
+    left: 0;
+}
+
+.container ul li:nth-child(2):hover ~.bigImg{
+    background-image: url(./img/2.jpg);
+}
+.container ul li:nth-child(2):hover ~.frame{
+    left: 200px;
+}
+
+.container ul li:nth-child(3):hover ~.bigImg{
+    background-image: url(./img/3.jpg);
+}
+.container ul li:nth-child(3):hover ~.frame{
+    left: 400px;
+}
+
+.container ul li:nth-child(4):hover ~.bigImg{
+    background-image: url(./img/4.jpg);
+}
+.container ul li:nth-child(4):hover ~.frame{
+    left: 600px;
+}
+
+.container ul li:nth-child(5):hover ~.bigImg{
+    background-image: url(./img/5.jpg);
+}
+.container ul li:nth-child(5):hover ~.frame{
+    left: 800px;
+}
+
+
+
+
