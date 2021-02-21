@@ -1,0 +1,113 @@
+*{
+
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+}
+
+body{
+
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+li{
+    list-style: none;
+}
+
+.accrodion{
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+}
+
+.accrodion > li {
+    width: 100%;
+}
+
+.accrodion > li input{
+    /* 隐藏单选按钮，表单美化 */
+    display: none;
+  
+}
+
+.accrodion > li label{
+    color: white;
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: #5fb878;
+    padding: 20px 50px;
+    cursor: pointer;
+} 
+
+.accrodion > li label i {
+    position: absolute;
+    left: 20px;
+    top: calc(50% - 8px);
+    transition: all .5s;
+}
+
+.accrodion > li label::after{
+    content: '';
+    position: absolute;
+    right: 20px;
+    bottom: -14px;
+    width: 30px;
+    height: 15px;
+    background-color: inherit;
+
+    clip-path: polygon(0 0,100% 0,50% 100%);
+}
+
+.accrodion > li label:hover{
+    background-color: #53aa6c;
+}
+
+.accrodion >li:not(:first-child) label{
+    border-top: 1px solid #38814d;
+}
+.accrodion >li ol{
+    width: 100%;
+    background-color: #333;
+}
+.accrodion >li ol li{
+    position: relative;
+    color: white;
+    height: 0px;
+    line-height: 50px;
+    padding-left: 20px;
+    transition: all .5s ;
+    
+}
+
+.accrodion>li ol li::before{
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 5px;
+    height: 4px;
+    height: 44px;
+    background-color: #5fb878;
+    /* y轴缩放 */
+    transform: scaleY(0);
+    transition: all .3s;
+}
+
+.accrodion>li ol li:hover::before{
+    transform: scaleY(1);
+}
+
+.accrodion>li input:checked ~ label i{
+    color:burlywood;
+    transform: rotate(90deg);
+}
+
+.accrodion>li input:checked ~ ol li{
+    height: 50px;
+}
