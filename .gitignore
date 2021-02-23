@@ -10,3 +10,6 @@
 #忽略video
 **/video
 **/v
+
+#忽略txt
+note.txt
