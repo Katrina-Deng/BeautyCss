@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(150deg, #3498db, #9b59b6);
+  min-height: 100vh;
+  display: flex;
+}
+img {
+  width: 100px;
+}
+
+.blog-slider {
+  width: 95%;
+  position: relative;
+  margin: auto;
+  background-color: white;
+  box-shadow: 0 14px 80px rgba(34, 35, 58, 0.2);
+  padding: 25px;
+  border-radius: 25px;
+  height: 400px;
+  transition: all 0.5s;
+}
+
+/* 响应式 */
+@media screen and (max-width: 992px) {
+  .blog-slider {
+    max-width: 680px;
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .blog-slider {
+    min-height: 500px;
+    height: auto;
+    margin: 180px auto;
+  }
+}
+
+@media screen and (max-height: 500px) and (min-width: 992px) {
+  .blog-slider {
+    height: 350px;
+  }
+}
+
+
