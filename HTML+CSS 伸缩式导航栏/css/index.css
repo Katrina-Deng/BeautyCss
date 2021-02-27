@@ -1,0 +1,95 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  height: 100vh;
+  background: linear-gradient(#0ca4a5, #dbb68f);
+}
+
+body,
+.navbar,
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar {
+  position: relative;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, .8);
+  border-radius: 50px;
+}
+
+.navbar input {
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.navbar span {
+  width: 30px;
+  height: 4px;
+  position: absolute;
+  background-color: #bb7e5d;
+  left: 25px;
+  top: calc(50% - 10px);
+  border-radius: 4px;
+  /* 这里有个问题，如果鼠标在span上面就选不到复选框。添加这个就能解决这个问题 */
+  pointer-events: none;
+  /* 收回去的时候 过渡相反 */
+  transition: transform 0.5s ease-in-out, top 0.5s ease-in-out;
+}
+
+.navbar span:nth-child(3) {
+  top: calc(50% + 6px);
+}
+
+.navbar ul {
+  /* 这个时候椭圆的等下给出解决方案 */
+  /* 这里的解决方法
+    当这里overflow: hidden 因为容量不够这里的文字换行了自动撑大了盒子，把文字改成不换行就可以
+  */
+  white-space: nowrap;
+  width: 0;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+.navbar ul li {
+  list-style: none;
+  margin: 0px 15px;
+}
+
+.navbar ul li a {
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #067988;
+}
+.navbar ul li a:hover {
+  color: #0ca4a5;
+}
+
+/* 选择时候展开 */
+
+.navbar input:checked ~ ul {
+  width: 350px;
+}
+.navbar input:checked ~ span:nth-child(2) {
+  top: calc(50% - 2px);
+  background-color: #c18a6c;
+  transform: rotate(45deg);
+  /* 先执行top 在执行transform */
+  transition: top 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.navbar input:checked ~ span:nth-child(3) {
+  top: calc(50% - 2px);
+  background-color: #c18a6c;
+  transform: rotate(-45deg);
+  transition: top 0.5s ease-in-out, transform 0.5s ease-in-out;
+  /* transition: transform 0.5s ease-in-out, top 0.5s ease-in-out; */
+}
