@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main {
+  width: 825px;
+  height: 376px;
+  /* height: 100%; */
+  margin: 150px auto;
+  font-size: 0px;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: red;
+  overflow: hidden;
+  /* transition: all 1s ease-in-out; */
+}
+
+.main li {
+  width: 160px;
+  float: left;
+ border-left:1px solid white ;
+  position: relative;
+  transition: all 1s ease-in-out;
+}
+.main li img {
+  width: 500px;
+ 
+}
+.main li .flag {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 24px;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: aliceblue;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* 重点是这里 */
+.main:hover li {
+  width: 80px;
+}
+
+.main li:hover {
+  width: 500px;
+}
