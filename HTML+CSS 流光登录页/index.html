@@ -9,22 +9,25 @@
     <title>流光登录页</title>
   </head>
   <body>
-    <form action="index.html" class="login-form">
-      <h1>login</h1>
-      <div class="txtb">
-        <input type="text" />
-        <span data-placeholder="Username"></span>
-      </div>
-      <div class="txtb">
-        <input type="password" />
-        <span data-placeholder="Password"></span>
-      </div>
+    <div class="loginContainer">
+      <form action="index.html" class="login-form">
+        <h1>login</h1>
+        <div class="txtb">
+          <input type="text" />
+          <span data-placeholder="Username"></span>
+        </div>
+        <div class="txtb">
+          <input type="password" />
+          <span data-placeholder="Password"></span>
+        </div>
 
-      <input type="submit" value="Login" class="logbtn" />
+        <input type="submit" value="Login" class="logbtn" />
 
-      <div class="bottom-text">Don't have account? <a href="#">Sign up</a></div>
-    </form>
-
+        <div class="bottom-text">
+          Don't have account? <a href="#">Sign up</a>
+        </div>
+      </form>
+    </div>
     <script>
       $(".txtb input").on("focus", function () {
         console.log(this);

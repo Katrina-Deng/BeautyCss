@@ -1,0 +1,402 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+input {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff;
+  overflow: hidden;
+}
+/* 构建半圆 */
+.container:before {
+  content: "";
+  position: absolute;
+  width: 2000px;
+  height: 2000px;
+  border-radius: 50%;
+  background: linear-gradient(-45deg, #4481eb, #04befe);
+  /* 向上移动10% , 向右顶开48%  */
+  top: -10%;
+  right: 48%;
+  /* 向y轴移动50% */
+  transform: translateY(-50%);
+  z-index: 6;
+  /* 过渡 */
+  transition: 1.8s ease-in-out;
+}
+
+.form-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.signin-signup {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  /* 宽度给到页面的一半 */
+  width: 50%;
+  /* 构建登录页面的结构 */
+  display: grid;
+  grid-template-columns: 1fr;
+  z-index: 5;
+  transition: 1s 0.7s ease-in-out;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  /* 构建登录页面的结构 把两个表格堆叠起来 */
+  grid-row: 1/2;
+  grid-column: 1/2;
+  padding: 0 5rem;
+  overflow: hidden;
+  transition: 1s 0.7s ease-in-out;
+}
+/* 然后根据opacity显示隐藏  */
+form.sign-in-form {
+  z-index: 2;
+}
+form.sign-up-form {
+  z-index: 1;
+  opacity: 0;
+}
+
+.title {
+  font-size: 2.2rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.input-filed {
+  width: 100%;
+  /* 最大宽 */
+  max-width: 380px;
+  height: 55px;
+  background-color: #f0f0f0;
+  margin: 10px 0;
+  border-radius: 55px;
+  /* 栅格化布局,解决布局问题 ,内容填充满格*/
+  display: grid;
+  /* 图标占 15% 输入框占 85% */
+  grid-template-columns: 15% 85%;
+  padding: 0 0.4rem;
+}
+
+.input-filed i {
+  /* 图标垂直左右居中 */
+  text-align: center;
+  line-height: 55px;
+  color: #acacac;
+  font-size: 1.1rem;
+}
+
+.input-filed input {
+  background: transparent;
+  outline: none;
+  border: none;
+  /* 根据该元素本身的字体大小 设置行高 */
+  line-height: 1;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.input-filed input::placeholder {
+  color: #aaa;
+  font-weight: 500;
+}
+
+.btn {
+  width: 150px;
+  height: 49px;
+  border: none;
+  outline: none;
+  border-radius: 49px;
+  margin: 10px 0;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #5995fd;
+  color: white;
+  font-weight: 600;
+  transition: 0.5s;
+  /* letter-spacing: 1px; */
+}
+
+.form-container .btn:hover {
+  background-color: #4d84e2;
+}
+
+.form-container .social-text {
+  /* 自适应 大小 */
+  padding: 0.7rem 0;
+  font-size: 1rem;
+}
+
+.form-container .social-meta {
+  display: flex;
+  justify-content: center;
+}
+
+.social-meta .social-icon {
+  height: 46px;
+  width: 46px;
+  border: 1px solid #444;
+  display: flex;
+  margin: 0 0.45rem;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  /* 自使用 同输入框字体大小一样 */
+  font-size: 1.1rem;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.social-meta .social-icon:hover {
+  border: 1px solid #4d84e2;
+  color: #4d84e2;
+}
+
+.panels-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  /* background-color: gold; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.panel {
+  display: flex;
+  /* 按列排列 */
+  flex-direction: column;
+  /* 从底部排列 */
+  align-items: flex-end;
+  /* 里面的东西剩余空间分布 */
+  justify-content: space-around;
+  text-align: center;
+  z-index: 7;
+}
+
+.left-panel {
+  pointer-events: all;
+  padding: 3rem 17% 2rem 12%;
+}
+
+.right-panel {
+  /* 阻止鼠标点击 */
+  pointer-events: none;
+  padding: 3rem 12% 2rem 17%;
+}
+
+/* 图片处理 */
+.panel .image {
+  width: 100%;
+  transition: 0.9s 0.6s ease-in-out;
+}
+/* 图示的文字处理 */
+.panel .content {
+  color: #fff;
+  /* 过渡 */
+  transition: 1.1s 0.4s ease-in-out;
+}
+
+.panel h3 {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.panel p {
+  font-size: 0.95rem;
+  padding: 0.7rem 0;
+}
+.btn.transparent {
+  margin: 0;
+  background: none;
+  border: 2px solid #fff;
+  width: 130px;
+  height: 41px;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+/* 移动右边的图示版，但是依然写不到东西，要更改z-index
+.panel z7 container::before z6 signup-signup z5
+.right-panel{
+     阻止鼠标点击 
+
+     .left-panel{
+    pointer-events: all;
+    允许鼠标点击事件
+
+*/
+.right-panel .content,
+.right-panel .image {
+  /* 沿x向右移动 800px */
+  transform: translateX(800px);
+}
+
+/* animation */
+.container.sign-up-move:before {
+  /* 自身元素往x轴走100% 自身元素往-y轴走50% */
+  transform: translate(100%, -50%);
+
+  right: 52%;
+}
+/* 处理图片文字 */
+.container.sign-up-move .left-panel .image,
+.container.sign-up-move .left-panel .content {
+  /* 对应  .right-panel .content,.right-panel .image 沿x向右移动 现在移动回来 */
+  transform: translateX(-800px);
+}
+
+.container.sign-up-move .right-panel .image,
+.container.sign-up-move .right-panel .content {
+  /* 对应  右边面板现在移动回来 */
+  transform: translateX(0);
+}
+/* 这个时候鼠标事件还是没有的 */
+.container.sign-up-move .left-panel {
+  pointer-events: none;
+}
+.container.sign-up-move .right-panel {
+  pointer-events: all;
+}
+.container.sign-up-move .signin-signup {
+  left: 25%;
+}
+
+/* 取消显示登录 */
+.container.sign-up-move form.sign-in-form {
+  z-index: 1;
+  opacity: 0;
+}
+/* 显示注册，组车原本是没有颜色现在要设置 */
+/* 要在 form 中过渡 */
+.container.sign-up-move form.sign-up-form {
+  z-index: 2;
+  /* */
+  opacity: 1;
+}
+
+/* 响应式处理 */
+@media (max-width: 870px) {
+  /* 当小于870px  保存宽度800px*/
+  .container {
+    min-width: 800px;
+    height: 100vh;
+  }
+  /* 取消图示和圆框 */
+  .container:before {
+    /* display: none; */
+    width: 1500px;
+    height: 1500px;
+    left: 30%;
+    bottom: 68%;
+    transform: translateX(-50%);
+    right: initial;
+    top: initial;
+    transition: 2s ease-in-out;
+  }
+  .signin-signup {
+    width: 100%;
+    left: 50%;
+    top: 95%;
+    transform: translate(-50%, -100%);
+    transition: 1s 0.8s ease-in-out;
+  }
+  .panels-container {
+    /* background-color: green;
+    z-index: 10; */
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+  }
+  .panel {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2.5rem 8%;
+  }
+  .panel .content {
+    padding-right: 15%;
+    transition: 0.9s 0.8s ease-in-out;
+  }
+  .panel .content h3 {
+    font-size: 1.2rem;
+  }
+  .panel .content p {
+    font-size: 0.7rem;
+    padding: 0.5rem 0;
+  }
+  .btn.transparent {
+    width: 110px;
+    height: 35px;
+    font-size: 0.7rem;
+  }
+  .panel .image {
+    width: 200px;
+    transition: 0.9s 0.6s ease-in-out;
+  }
+  .left-panel {
+    grid-row: 1/2;
+  }
+  .right-panel {
+    grid-row: 3/4;
+  }
+  .right-panel .content,
+  .right-panel .image {
+    transform: translateY(300px);
+  }
+  .container.sign-up-move::before {
+    /* 整体向左移动50 向下移动100% */
+    transform: translate(-50%, 100%);
+    bottom: 32%;
+    right: initial;
+  }
+  .container.sign-up-move .left-panel .image,
+  .container.sign-up-move .left-panel .content {
+    transform: translateY(-300px);
+  }
+  .container.sign-up-move .signin-signup {
+    top: 5%;
+    transform: translate(-50%, 0);
+    left: 50%;
+  }
+}
+
+@media (max-width: 570px) {
+  form {
+    padding: 0 1.5rem;
+  }
+  .panel .image {
+    display: none;
+  }
+  .panel .content {
+    padding: 0.5rem 1rem;
+  }
+  .contanier::before {
+    bottom: 72%;
+    left: 50%;
+  }
+  .contanier.sign-up-move::before {
+    bottom: 28%;
+    left: 50%;
+  }
+}

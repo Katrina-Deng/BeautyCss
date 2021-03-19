@@ -1,0 +1,58 @@
+{
+  "id": "2431465",
+  "name": "ucPage",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "124857",
+      "name": "微博",
+      "font_class": "weibo",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "6742309",
+      "name": "微信",
+      "font_class": "weixin",
+      "unicode": "e686",
+      "unicode_decimal": 59014
+    },
+    {
+      "icon_id": "11776600",
+      "name": "ipad",
+      "font_class": "ipad",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "12310471",
+      "name": "tv",
+      "font_class": "tv",
+      "unicode": "e8b0",
+      "unicode_decimal": 59568
+    },
+    {
+      "icon_id": "13543865",
+      "name": "手机",
+      "font_class": "shouji",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "20312928",
+      "name": "百度",
+      "font_class": "baidu",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "15644320",
+      "name": "地球",
+      "font_class": "diqiu",
+      "unicode": "e6bc",
+      "unicode_decimal": 59068
+    }
+  ]
+}

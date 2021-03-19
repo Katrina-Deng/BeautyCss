@@ -1,0 +1,239 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+h1,
+h2 {
+  font-size: 0px;
+  padding: 0;
+  margin: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.main-panel {
+  width: 984px;
+  margin: 0 auto;
+}
+header {
+  width: 100%;
+  background-color: #fff;
+  background-image: none;
+}
+.nav-container {
+  box-sizing: border-box;
+  height: 70px;
+}
+.nav-container .logo {
+  float: left;
+  margin-top: 9px;
+}
+.nav-container .menu-panel {
+  float: right;
+}
+.nav-container .menu-panel .menu-panel-item {
+  display: inline-block;
+  margin: 0px 16px;
+  position: relative;
+}
+.nav-container .menu-panel .menu-panel-item .active {
+  color: #ff6600;
+}
+.nav-container .menu-panel .menu-panel-item > a {
+  display: inline-block;
+  font: normal normal 20px / 68px "微软雅黑";
+  color: #858585;
+  padding: 0px 10px;
+  border-bottom: 2px solid #fff;
+  transition: all 1s linear;
+}
+.nav-container .menu-panel .menu-panel-item > a:hover {
+  border-bottom: 2px solid #ff6600;
+}
+.nav-container .show-submenu {
+  display: block;
+}
+.nav-container .submenu-panel {
+  position: absolute;
+  width: 140px;
+  list-style: none;
+  transform: translateX(-50%);
+  margin-top: 4px;
+  left: 28px;
+  border: 1px solid #f6f6f6;
+  padding: 10px 1px 0px 1px;
+  box-shadow: 0px 0px 7px 0px #c9c9c9;
+  background-color: #fff;
+}
+.nav-container .submenu-panel::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: calc(50% - 7px);
+  width: 15px;
+  height: 6px;
+  background-color: #fff;
+  clip-path: polygon(0 100%, 50% 0, 100% 100%);
+}
+.nav-container .submenu-panel .submenu-panel-item .active {
+  color: #ff6600;
+  background-color: #f6f6f6;
+  background-image: none;
+}
+.nav-container .submenu-panel .submenu-panel-item a {
+  display: block;
+  text-align: center;
+  font: normal normal 14px / 34px "微软雅黑";
+  color: #555;
+}
+.banner {
+  width: 100%;
+  background-color: #f5f4f0;
+}
+.download-panel {
+  padding: 15px 2px 0px 6px;
+}
+.download-warp {
+  display: inline-block;
+}
+.download-left {
+  display: flex;
+}
+.download-left .code-right {
+  margin-left: 40px;
+  margin-right: 0px;
+}
+.download-code-uc {
+  margin-right: 35px;
+}
+.download-code-uc .downloaddes {
+  font: normal normal 12px / 22px Microsoft YaHei;
+  text-align: center;
+  color: #999999;
+}
+.download-item {
+  padding: 7px 30px 0px 30px;
+  text-align: center;
+}
+.download-item .downloaddes {
+  font: normal normal 12px / 22px Microsoft YaHei;
+  color: #444;
+}
+.download-item img {
+  height: 65px;
+}
+.divdownload {
+  margin-right: 12px;
+  border-right: 1px solid #eee;
+}
+.info-panel {
+  margin-top: 42px;
+  margin-bottom: 37px;
+  display: flex;
+  justify-content: space-between;
+}
+.info-warp {
+  width: 290px;
+}
+.info-banner {
+  margin-bottom: 9px;
+}
+.info-header {
+  color: #444;
+}
+.info-header .info-title {
+  font: normal normal 20px / 60px "微软雅黑";
+  display: inline-block;
+}
+.info-header .info-more {
+  font: normal normal 14px / 60px "微软雅黑";
+  float: right;
+}
+.info-banner {
+  position: relative;
+  font-size: 0;
+}
+.info-banner .info-banner-des {
+  position: absolute;
+  display: block;
+  width: 100%;
+  color: #444;
+  font: normal normal 14px / 34px "微软雅黑";
+  background-color: rgba(246, 246, 246, 0.8);
+  bottom: 0px;
+  text-align: center;
+}
+.info-content-title {
+  color: #444;
+  font: normal normal 14px / 26px "微软雅黑";
+}
+footer {
+  background-color: #333;
+  padding-bottom: 37px;
+}
+.footer-warp {
+  padding-top: 28px;
+}
+.uc-relate-panel {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 22px;
+}
+.uc-relate-info .item-title {
+  font-weight: 600;
+}
+.uc-footer-item {
+  font: normal normal 12px / 19px "微软雅黑";
+  color: #aaa;
+}
+.uc-thirdparty-panel {
+  text-align: center;
+  border-top: 1px dotted #999999;
+  border-bottom: 1px dotted #999999;
+}
+.uc-partyinfo {
+  font: normal normal 12px / 38px "微软雅黑";
+  color: #aaa;
+  word-spacing: 5px;
+}
+.uc-partyinfo .title {
+  color: #666666;
+}
+.link-panel {
+  margin-top: -1px;
+}
+.uc-rights {
+  padding-top: 25px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.uc-rights .logo {
+  width: 87px;
+  height: 40px;
+  padding: 28px 0px 0px 17px;
+  margin-right: 20px;
+}
+.uc-rights .uc-right-info {
+  font: normal normal 12px / 19px "微软雅黑";
+  color: #aaa;
+  display: inline-block;
+  margin-right: 30px;
+}
+.uc-rights .uc-rights-icon {
+  text-align: right;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
